@@ -1,51 +1,28 @@
-// add event listener When form gets submitted and call makeGrid()
-document.querySelector("#sizePicker").addEventListener(
-  "submit",
-  function(e) {
-    e.preventDefault();
-    makeGrid();
-  },
-  false
-);
-
+/* JavaScript function to create the grid when submit button is clicked.
+ * It takes in height and width of the grid from the html form and creates
+ * the grid on the table canvas element in html page.
+ */
 function makeGrid() {
-  // Define user input height and width.
-  const pixelHeight = document.querySelector("#input_height").value;
-  const pixelWidth = document.querySelector("#input_width").value;
-
-  // Define table element.
-  const pixelTable = document.querySelector("#pixel_canvas");
-
-  // Clear the table when user re-submit height and width.
-  // https://stackoverflow.com/questions/7271490/delete-all-rows-in-an-html-table#answer-44971572
-  while (pixelTable.hasChildNodes()) {
-    pixelTable.removeChild(pixelTable.lastChild);
-  }
-
-  // Loops dynamically to create the table based on user input.
-  for (let row = 0; row < pixelHeight; row++) {
-    let tr = document.createElement("tr");
-    tr.id = "row-" + row;
-    pixelTable.appendChild(tr);
-    for (let col = 0; col < pixelWidth; col++) {
-      let td = document.createElement("td");
-      td.id = "row-" + row + "_cell-" + col;
-      pixelTable.lastChild.appendChild(td);
+  var height = document.getElementById("input_height").value;
+  var width = document.getElementById("input_width").value;
+  var table = document.getElementById("pixel_canvas");
+  // Table grid creation code :
+  table.innerHTML = "";
+  var tbody = document.createElement("tbody");
+  for (var i = 0; i < height; i++) {
+    var tr = document.createElement("tr");
+    for (var j = 0; j < width; j++) {
+      var td = document.createElement("td");
+      td.appendChild(document.createTextNode(""));
+      tr.appendChild(td);
     }
+    tbody.appendChild(tr);
   }
-
-  // Create new instances of the all document.querySelectorAll("td").
-  let tableCells = Array.from(document.querySelectorAll("td"));
-  // Each cell should have an event listener that sets the background color of the cell to the selected color.
-  tableCells.forEach(function(cell) {
-    cell.addEventListener(
-      "click",
-      function() {
-        this.style.backgroundColor = document.querySelector(
-          "#colorPicker"
-        ).value;
-      },
-      false
-    );
-  });
+  table.appendChild(tbody);
 }
+
+//jQuery to change color of pixel when clicked.
+$("body").on("click", "td", function() {
+  var color = document.getElementById("colorPicker").value;
+  $(this).css("background-color", color);
+});

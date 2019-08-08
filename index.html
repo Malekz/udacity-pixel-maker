@@ -8,34 +8,16 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
     <h1>Lab: Pixel Art Maker</h1>
 
     <h2>Choose Grid Size</h2>
     <form id="sizePicker">
-      <label for="input_height">Grid Height: </label>
-      <input
-        type="number"
-        id="input_height"
-        name="height"
-        min="1"
-        max="48"
-        value=""
-        required
-      />
-      <label for="input_height">Grid Width: </label>
-      <input
-        type="number"
-        id="input_width"
-        name="width"
-        min="1"
-        max="48"
-        value=""
-        required
-      />
-      <input type="submit" />
-      <input type="button" value="Reset" onClick="window.location.reload()" />
+      Grid Height:
+      <input type="number" id="input_height" name="height" min="1" value="1" />
+      Grid Width:
+      <input type="number" id="input_width" name="width" min="1" value="1" />
+      <button type="button" onclick="makeGrid()">Submit</button>
     </form>
 
     <h2>Pick A Color</h2>
@@ -44,6 +26,7 @@
     <h2>Design Canvas</h2>
     <table id="pixel_canvas"></table>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="design.js"></script>
   </body>
 </html>
