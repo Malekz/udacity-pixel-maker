@@ -1,4 +1,4 @@
-# Pixel Art Maker Project
+# The Pixel Art Maker Project
 
 This project was developed through the Udacity - Front-End Web Developer Nanodegree Program.
 
