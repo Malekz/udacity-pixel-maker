@@ -1,6 +1,6 @@
 # The Pixel Art Maker Project
 
-This project was developed through the Udacity - Front-End Web Developer Nanodegree Program.
+This project was developed through the Udacity - Front-End Web Developer Nanodegree Program
 
 Built with: HTML, CSS and JavaScript
 
