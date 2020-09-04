@@ -16,5 +16,5 @@ https://malekz.github.io/udacity-pixel-maker/
 ## Instructions
 
 - Download or Clone the Repository.
-- Open index.html in your browser.
+- Open index.html in your browser
 
