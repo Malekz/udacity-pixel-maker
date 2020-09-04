@@ -2,7 +2,7 @@
 
 This project was developed through the Udacity - Front-End Web Developer Nanodegree Program.
 
-Built with: HTML, CSS and JavaScript.
+Built with: HTML, CSS and JavaScript
 
 https://malekz.github.io/udacity-pixel-maker/
 
